@@ -1,0 +1,4 @@
+@function increaseFontSize($fs) {
+    $font-size: max($fs, 10px );
+    @return $font-size;
+}

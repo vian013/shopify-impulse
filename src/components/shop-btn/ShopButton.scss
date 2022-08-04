@@ -1,0 +1,15 @@
+@use "../../styles/" as *;
+
+.shop-btn {
+    background: $btn-bg-color--1;
+    text-transform: uppercase;
+    padding: 12px 25px;
+    color: $text-color--1;
+    font-family: $sub-title-font--1;
+    letter-spacing: .2rem;
+    font-size: 15px;
+    margin-right: 15px;
+    display: inline-block;
+    transition: .8s;
+    opacity: 0;
+}

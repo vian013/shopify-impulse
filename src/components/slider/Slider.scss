@@ -1,0 +1,58 @@
+@use "../../styles/" as *;
+
+.swiper-slide-active {
+    .slide-container {
+        .content-wrapper {
+            .title {
+                transform: translateY(0);
+            }
+
+            .sub-title {
+                transform: translateY(0);
+            }
+
+            .shop-btn {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+
+    .swiper-pagination-bullet {
+        width: 120px;
+        height: 7px;
+        border-radius: 0;
+        background: rgb(255, 255, 255, .4);
+        transition: .2s ease-in;
+        opacity: 1;
+
+        &:hover {
+            background: rgb(255, 255, 255, .7);
+        }
+
+
+        &.swiper-pagination-bullet-active {
+            position: relative;
+            
+            
+            &::after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: $btn-bg-color--2;
+                transform: translateX(-100%);
+                transition: 3s linear;
+            }
+        }
+    }
+    
+}
