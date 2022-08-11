@@ -1,0 +1,108 @@
+@use "../../styles/" as *;
+
+.popup-container {
+    width: 100%;
+    height: 100%;
+    background: $modal-background-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    &.active {
+        z-index: 1;
+
+        .popup-wrapper{
+            @include popup_animation($popup-animation-name, $popup-animation-duration, $popup-animation-style)
+        }
+    }
+
+    .popup-wrapper {
+        width: 800px;
+        height: 300px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -40%);
+        background: $bg-color--1;
+        display: flex;
+        transition: all .2s;
+        
+        .content-wrapper {
+            width: 50%;
+            padding: 40px;
+            text-align: center;
+
+            .title {
+                font-size: 25px;
+                letter-spacing: 0.05em;
+                margin-bottom: 20px;
+            }
+
+            .description {
+                font-size: 18px;
+                line-height: 25px;
+                margin-bottom: 28px;
+            }
+
+            .email-wrapper {
+                width: 100%;
+                height: 45px;
+
+                input {
+                    width: 72%;
+                    padding-left: 10px;
+                    height: 100%;
+
+                    &::placeholder {
+                        color: $text-color--2;
+                    }
+                }
+                
+                button {
+                    width: 28%;
+                    height: 100%;
+                    border: none;
+                    background: $btn-bg-color--1;
+                    cursor: pointer;
+                    position: relative;
+                    overflow: hidden;
+
+                    svg {
+                        width: 20px;
+
+                        path {
+                            fill: $bg-color--1;
+                        }
+                    }
+
+                    &::after {
+                        content: "";
+                        width: 300%;
+                        height: 100%;
+                        background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+                        transform: skewX(-20deg);
+                        position: absolute;
+                        top: 0;
+                        left: 115%;
+                        transition: all .5s;
+                    }
+
+                    &:hover::after {
+                        left: -180%;
+                    }
+                }
+            }
+        }
+
+        .img-wrapper {
+            width: 50%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

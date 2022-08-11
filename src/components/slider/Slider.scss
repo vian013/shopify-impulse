@@ -16,6 +16,14 @@
             }
         }
     }
+
+}
+
+     
+.autoplay-btn {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
 }
 
 .swiper-pagination-bullets.swiper-pagination-horizontal {
@@ -24,35 +32,41 @@
     justify-content: center;
 
     .swiper-pagination-bullet {
+        position: relative;
         width: 120px;
         height: 7px;
         border-radius: 0;
         background: rgb(255, 255, 255, .4);
         transition: .2s ease-in;
         opacity: 1;
+        overflow: hidden;
 
         &:hover {
             background: rgb(255, 255, 255, .7);
         }
 
+        &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: $btn-bg-color--2;
+        }
 
         &.swiper-pagination-bullet-active {
             position: relative;
             
-            
             &::after {
                 content: "";
-                width: 100%;
-                height: 100%;
-                display: block;
+                opacity: 1;
                 position: absolute;
-                top: 0;
-                left: 0;
-                background: $btn-bg-color--2;
-                transform: translateX(-100%);
-                transition: 3s linear;
+                @include slider_animation($bullet-animation-name, $bullet-animation-duration,
+                $bullet-animation-style)
             }
         }
     }
-    
+   
 }

@@ -1,0 +1,32 @@
+@mixin slider_animation($name, $duration, $style) {
+    @keyframes slider_bullet {
+        0% {
+            transform: translateX(-100%);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-timing-function: $style;
+}
+
+@mixin popup_animation($name, $duration, $style) {
+    @keyframes popup_wrapper {
+        0% {
+            transform: translate(-50%, -40%);
+        }
+
+        100% {
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-timing-function: $style;
+    animation-fill-mode: both;
+}

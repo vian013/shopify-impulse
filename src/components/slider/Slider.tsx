@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, createRef } from 'react'
 import {Swiper, SwiperSlide} from "swiper/react"
 import { Pagination, Autoplay } from "swiper"
 import "swiper/css"
@@ -15,18 +15,50 @@ export type SlideType = {
   subTitle?: string,
 }
 
-export class Slider extends Component {
+type Props = {
+  delay: number
+}
+
+type State = {
+  autoplay: boolean,
+}
+
+type SwiperRef = {autoplay: {start: Function, stop: Function}} | null
+
+interface WithRef {
+  swiperRef: SwiperRef,
+}
+
+export class Slider extends Component<Props, State> implements WithRef {
+  constructor(props: Props) {
+    super(props)
+    this.state = {
+      autoplay: true,
+    }
+    this.toggleAutoplay = this.toggleAutoplay.bind(this)
+  }
+  swiperRef: SwiperRef = null
+
+
+  toggleAutoplay() {
+    this.setState(state => ({autoplay: !state.autoplay}))
+  }
+
+  componentDidUpdate() {
+    this.state.autoplay ? this.swiperRef!.autoplay.start() : this.swiperRef!.autoplay.stop()
+  }
+  
   render() {
     return (
       <div>
         <Swiper 
         modules={[Pagination, Autoplay]}
         pagination={{clickable: true}}
-        // autoplay={{delay: 2000}}
-        // spaceBetween={50}
+        autoplay={{delay: this.props.delay}}
         slidesPerView={1}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}>
+        onSwiper={(swiper) => {
+          this.swiperRef = swiper
+        }}>
             <SwiperSlide>
               <Slide slide={slides[0]} styleNum={1}>
                 <ShopButton link="/">shop top</ShopButton>
@@ -40,6 +72,7 @@ export class Slider extends Component {
                 </>
               </Slide>
             </SwiperSlide>
+            <button className='autoplay-btn' onClick={this.toggleAutoplay} slot='container-end'>Autoplay</button>
         </Swiper>
       </div>
     )

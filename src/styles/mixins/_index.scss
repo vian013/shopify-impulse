@@ -1,3 +1,5 @@
+@forward "./animations.scss";
+
 @mixin flex($jc: center, $ai: center) {
     display: flex;
     justify-content: $jc;
