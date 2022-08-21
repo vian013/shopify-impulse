@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import Slider from '../../components/slider/Slider'
+import AnnouncementBar from '../../sections/announcement-bar/AnnouncementBar'
 
 
 type Props = {
-  
 }
 
 type State = {
+    sliderDelay: number
 }
 
 export class Home extends Component<Props, State> {
@@ -14,6 +15,7 @@ export class Home extends Component<Props, State> {
         super(props)
       
         this.state = {
+            sliderDelay: 5000
         }
       }
     
@@ -28,7 +30,8 @@ export class Home extends Component<Props, State> {
     render() {
         return (
             <div id='homepage'>
-                <Slider delay={5000}/>
+                <AnnouncementBar delay={this.state.sliderDelay}/>
+                <Slider delay={this.state.sliderDelay}/>
             </div>
         )
     }

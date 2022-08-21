@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from './components/header/Header';
+import Header from './layout/header/Header';
 import Popup from './components/popup/Popup';
 import AppRoutes from './routes/AppRoutes';
 

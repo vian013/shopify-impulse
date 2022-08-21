@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Nav from '../navbar/Navbar'
-import TopBar from '../top-bar/TopBar'
+import Nav from '../../components/navbar/Navbar'
+import TopBar from '../../components/top-bar/TopBar'
 import styles from "./Header.module.scss"
 import "./Header.scss"
 

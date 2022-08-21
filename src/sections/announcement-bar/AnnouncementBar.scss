@@ -1,0 +1,19 @@
+@use "../../styles" as *;
+
+.announcement-bar {
+    background: $bg-color--2;
+    color: $text-color--1;
+
+    .annoucement-wrapper {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+
+        .title {
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: .1em;
+            margin-right: 10px;
+        }
+    }
+}
