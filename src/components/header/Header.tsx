@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Nav from '../nav/Nav'
+import Nav from '../navbar/Navbar'
 import TopBar from '../top-bar/TopBar'
 import styles from "./Header.module.scss"
 import "./Header.scss"

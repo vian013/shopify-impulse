@@ -7,8 +7,8 @@ import "./SocialIcons.scss"
 function SocialIcons() {
   return (
     <div className='social-icons'>
-        {socialIcons.map(({link, svgContent}) => (
-            <a className='social-icon' target="_blank" href={link}>{parser(svgContent)}</a>
+        {socialIcons.map(({link, svgContent}, index) => (
+            <a key={index} className='social-icon' target="_blank" href={link}>{parser(svgContent)}</a>
         ))}
     </div>
   )
