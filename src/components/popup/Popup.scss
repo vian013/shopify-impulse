@@ -8,10 +8,12 @@
     top: 0;
     left: 0;
     z-index: -1;
+    opacity: 0;
 
     &.active {
-        z-index: 1;
-
+        z-index: 2;
+        opacity: 1;
+        
         .popup-wrapper{
             @include popup_animation($popup-animation-name, $popup-animation-duration, $popup-animation-style)
         }

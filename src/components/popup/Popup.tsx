@@ -5,7 +5,8 @@ import parser from "html-react-parser"
 import buttons from '../../static/icons/buttons'
 
 type Props = {
-
+  isPathChanged: boolean
+  handleClosePopup: ()=>void
 }
 
 type State = {
@@ -27,14 +28,17 @@ export class Popup extends Component<Props, State> {
   }
 
   componentDidMount() {
-    
+    this.handleOpenPopup()
+  }
+  
+  handleOpenPopup() {
     const timeId = setTimeout(() => {
       this.setState({isOpen: true})
     }, 2000);
     this.setState({timeId})
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProp: Props) {
     if (this.state.isOpen) {
       document.body.style.overflowY = "hidden"
       document.body.style.paddingRight = "15px"
@@ -42,6 +46,9 @@ export class Popup extends Component<Props, State> {
       document.body.style.overflowY = "initial"
       document.body.style.paddingRight = "0"
     }
+
+    if (this.props.isPathChanged && !prevProp.isPathChanged) this.handleOpenPopup()
+
   }
   
   componentWillUnmount() {
@@ -50,6 +57,7 @@ export class Popup extends Component<Props, State> {
 
   handleCloseModal() {
     this.setState({isOpen: false})
+    this.props.handleClosePopup()
   }
 
   handleContentClick(e: React.MouseEvent) {

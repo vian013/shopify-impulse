@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
+import Nav from '../nav/Nav'
 import TopBar from '../top-bar/TopBar'
 import styles from "./Header.module.scss"
+import "./Header.scss"
 
 export class Header extends Component {
   render() {
     return (
-      <div className={styles["header-hihi"]}>
+      <header id="header">
         <TopBar />
-      </div>
+        <Nav />
+      </header>
     )
   }
 }

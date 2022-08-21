@@ -1,0 +1,11 @@
+.link-list {
+    display: flex;
+
+    .link-wrapper {
+        padding-right: 20px;
+
+        a {
+            font-size: 15px;
+        }
+    }
+}

@@ -1,14 +1,14 @@
 export default [
     {
         title: "About",
-        link: "/"
+        link: "/about"
     },
     {
         title: "Contact",
-        link: "/"
+        link: "/contact"
     },
     {
         title: "FAQ",
-        link: "/"
+        link: "/faq"
     },
 ]
