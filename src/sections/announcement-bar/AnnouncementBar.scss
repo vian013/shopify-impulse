@@ -7,13 +7,19 @@
     .annoucement-wrapper {
         display: flex;
         justify-content: center;
-        padding: 10px 0;
+        align-items: baseline;
+        padding: 13px 0;
 
         .title {
             text-transform: uppercase;
             font-size: 14px;
-            letter-spacing: .1em;
-            margin-right: 10px;
+            letter-spacing: .2em;
+            margin-right: 5px;
+            font-weight: 600;
+        }
+
+        .sub-title {
+            font-size: 15px;
         }
     }
 }

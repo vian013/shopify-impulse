@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Nav from '../../components/navbar/Navbar'
+import Navbar from '../../components/navbar/Navbar'
 import TopBar from '../../components/top-bar/TopBar'
 import styles from "./Header.module.scss"
 import "./Header.scss"
@@ -9,7 +9,7 @@ export class Header extends Component {
     return (
       <header id="header">
         <TopBar />
-        <Nav />
+        <Navbar />
       </header>
     )
   }

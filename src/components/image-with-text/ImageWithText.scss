@@ -1,0 +1,84 @@
+@use "../../styles/" as *;
+
+.image-with-text {
+    width: 50%;
+    margin: 0 10px;
+    position: relative;
+
+    .img-wrapper {
+        width: 100%;
+        padding-top: 120%;
+        position: relative;
+
+        &.frame {
+            &::after {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                content: "";
+                z-index: 1;
+                box-shadow: inset 0 0 0 2px $border-color--2;
+                border: 10px solid transparent;
+                box-sizing: border-box;
+                pointer-events: none;
+            }
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            object-fit: cover;
+        }
+    }
+
+    .content-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: $text-color--1;
+        width: max-content;
+
+        &.bottom {
+            top: initial;
+            bottom: 5%;
+            transform: translate(-50%, 0);
+        }
+
+        .subtitle {
+            font-size: 22px;
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 50px;
+            font-weight: 400;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+        }
+        
+        .description {
+            font-size: 18px;
+            margin-bottom: 15px;
+
+            p {
+                line-height: 25px;
+            }
+        }
+    }
+    
+    
+}

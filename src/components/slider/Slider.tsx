@@ -50,7 +50,7 @@ export class Slider extends Component<Props, State> implements WithRef {
   
   render() {
     return (
-      <div>
+      <div className='slideshow'>
         <Swiper 
         modules={[Pagination, Autoplay]}
         pagination={{clickable: true}}

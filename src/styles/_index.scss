@@ -2,3 +2,7 @@
 @forward "./mixins";
 @forward "./functions";
 @forward "./global/";
+
+.section {
+    padding-top: 80px;
+}

@@ -1,9 +1,12 @@
 import React from 'react'
 import "./ShopButton.scss"
 
-function ShopButton({link, children}: {link: string, children: string}) {
+type Props = {link: string, children: string, bgColor?: string}
+
+
+function ShopButton({link, children, bgColor}: Props) {
   return (
-    <a className='shop-btn' href={link}>{children}</a>
+      <a className={`shop-btn ${bgColor?bgColor:""}`} href={link}>{children}</a>
   )
 }
 

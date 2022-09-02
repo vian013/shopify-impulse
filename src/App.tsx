@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './layout/header/Header';
 import Popup from './components/popup/Popup';
 import AppRoutes from './routes/AppRoutes';
+import Footer from './layout/footer/Footer';
 
 type Props = {
 }
@@ -16,6 +17,7 @@ class App extends Component<Props, State> {
       <div className="App">
         <Header />
         <AppRoutes />
+        <Footer />
       </div>
     );
   }
