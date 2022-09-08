@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Slider from '../../components/slider/Slider'
 import AnnouncementBar from '../../sections/announcement-bar/AnnouncementBar'
 import Promo from '../../sections/promo/Promo'
+import ShopByCategory from '../../sections/shop-by-category/ShopByCategory'
 import TextBanner from '../../sections/text-banner/TextBanner'
 
 type Props = {
@@ -34,6 +35,7 @@ export class Home extends Component<Props, State> {
                 <Slider delay={this.state.sliderDelay}/>
                 <TextBanner />
                 <Promo />
+                <ShopByCategory />
             </div>
         )
     }

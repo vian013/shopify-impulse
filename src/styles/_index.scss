@@ -5,4 +5,14 @@
 
 .section {
     padding-top: 80px;
+
+    .title {
+        font-size: 32px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
+
+.page-width {
+    padding: 0 40px;
 }
