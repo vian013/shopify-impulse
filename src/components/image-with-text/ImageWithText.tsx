@@ -8,12 +8,13 @@ type Props = {
     subtitle?: string, 
     description?: JSX.Element, 
     contentPosition?: string
-    children: JSX.Element
+    children: JSX.Element,
+    width: string
 }
 
-function ImageWithText({frameBorder, imgUrl, title, subtitle, description, children, contentPosition}: Props) {
+function ImageWithText({frameBorder, imgUrl, title, subtitle, description, children, contentPosition, width}: Props) {
   return (
-    <div className='image-with-text'>
+    <div className={`image-with-text width--${width}`}>
         <div className={`img-wrapper ${frameBorder?"frame":""}`}>
             <img src={imgUrl} alt={title} loading="lazy"/>
         </div>

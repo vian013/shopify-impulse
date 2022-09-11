@@ -10,6 +10,8 @@
     font-size: 15px;
     margin-right: 15px;
     display: inline-block;
+    position: relative;
+    overflow: hidden;
 
     &.grey {
         background: $btn-bg-color--3;
@@ -18,5 +20,25 @@
     &.white {
         background: $btn-bg-color--2;
         color: $text-color--2;
+    }
+
+    &.crimson {
+        background: $btn-bg-color--4;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 100%;
+        background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1), transparent);
+        top: 0;
+        right: -200%;
+        transform: skewX(-45deg);
+    }
+    
+    &:hover::after {
+        right: 100%;
+        transition: all .5s ease-out;
     }
 }

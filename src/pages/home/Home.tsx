@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Slider from '../../components/slider/Slider'
 import AnnouncementBar from '../../sections/announcement-bar/AnnouncementBar'
-import Promo from '../../sections/promo/Promo'
+import PromoDouble from '../../sections/promo/promo-double/PromoDouble'
+import PromoSingle from '../../sections/promo/promo-single/PromoSingle'
 import ShopByCategory from '../../sections/shop-by-category/ShopByCategory'
 import TextBanner from '../../sections/text-banner/TextBanner'
 
@@ -34,8 +35,9 @@ export class Home extends Component<Props, State> {
                 <AnnouncementBar delay={this.state.sliderDelay}/>
                 <Slider delay={this.state.sliderDelay}/>
                 <TextBanner />
-                <Promo />
+                <PromoDouble />
                 <ShopByCategory />
+                <PromoSingle />
             </div>
         )
     }
