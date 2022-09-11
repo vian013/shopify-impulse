@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Slider from '../../components/slider/Slider'
 import AnnouncementBar from '../../sections/announcement-bar/AnnouncementBar'
+import PromoDiscount from '../../sections/promo/promo-discount/PromoDiscount'
 import PromoDouble from '../../sections/promo/promo-double/PromoDouble'
 import PromoSingle from '../../sections/promo/promo-single/PromoSingle'
 import ShopByCategory from '../../sections/shop-by-category/ShopByCategory'
@@ -38,6 +39,7 @@ export class Home extends Component<Props, State> {
                 <PromoDouble />
                 <ShopByCategory />
                 <PromoSingle />
+                <PromoDiscount />
             </div>
         )
     }

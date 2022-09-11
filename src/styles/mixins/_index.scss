@@ -1,7 +1,24 @@
 @forward "./animations.scss";
+@use "../variables/colors.scss" as *;
 
 @mixin flex($jc: center, $ai: center) {
     display: flex;
     justify-content: $jc;
     align-items: $ai;
+}
+
+@mixin frame($border-color: $border-color--2) {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "";
+    z-index: 1;
+    box-shadow: inset 0 0 0 2px $border-color;
+    border: 10px solid transparent;
+    box-sizing: border-box;
+    pointer-events: none;
 }
