@@ -1,0 +1,12 @@
+@use "../../styles/" as *;
+
+.background-image-text {
+    .background-img {
+        height: 755px;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+
+}

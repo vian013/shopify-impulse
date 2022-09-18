@@ -1,0 +1,15 @@
+@use "../../styles/" as *;
+
+.view-all-wrapper {
+    text-align: center;
+
+    .view-all-btn {
+        text-transform: uppercase;
+        padding: 9px 12px;
+        border: 1px solid $border-color--1;
+        font-size: 13px;
+        letter-spacing: .2em;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+}

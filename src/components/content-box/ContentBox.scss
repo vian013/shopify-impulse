@@ -1,0 +1,30 @@
+@use "../../styles/" as *;
+
+.section {
+    .content-box {
+        background: $bg-color--1;
+        width: 380px;
+        position: absolute;
+        top: 60px;
+        left: 60px;
+        padding: 30px;
+    
+        .subtitle {
+            letter-spacing: .2em;
+            margin-bottom: 10px;
+        }
+    
+        .title {
+            text-align: left;
+            font-size: 25px;
+            letter-spacing: .1em;
+            margin-bottom: 15px;
+        }
+    
+        .description {
+            font-size: 20px;
+            line-height: 30px;
+            margin-bottom: 30px;
+        }
+    }
+}

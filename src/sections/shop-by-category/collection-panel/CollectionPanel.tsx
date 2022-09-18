@@ -30,7 +30,7 @@ export class CollectionPanel extends Component<Props, State> {
     }
 
     componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
-      console.log(this.state.collections);
+      // console.log(this.state.collections);
     }
     
   render() {
@@ -41,8 +41,8 @@ export class CollectionPanel extends Component<Props, State> {
     :(
       <div className='collection-panel'>
         {collections.map(({imgUrl, handle, title}, index) => (
-          <div className="collection-wrapper">
-            <Link key={index} to={`/collections/${handle}`}>
+          <div className="collection-wrapper" key={index}>
+            <Link to={`/collections/${handle}`}>
               <div className="img-wrapper">
                 <img src={imgUrl} loading="lazy" />
               </div>

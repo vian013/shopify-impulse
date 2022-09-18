@@ -7,6 +7,23 @@ export default {
         },
         shopByCategory: {
             title: "SHOP BY CATEGORY"
-        } 
+        },
+        popularPicks: {
+            title: "Popular Picks"
+        },
+        backgroundImageText: {
+            bgImage: "https://cdn.shopify.com/s/files/1/0027/7692/4218/files/dress-mobile_1080x.jpg?v=1612797029",
+            subTitle: "NEW FOR 2021",
+            title: "BOUTIQUE STYLE",
+            description: "Fierce elegance is about authenticity, refinement, beauty and grace. It’s a powerful lady like class with a touch of sophisticated sass that creates a sleek and commanding presence.",
+            btnText: "view lookbook"
+        },
+        fromTheJournal: {
+            title: "From the journal"
+        },
+        localPickup: {
+            title: "Local pickup available",
+            btnText: "Get directions"
+        }
     }
 }

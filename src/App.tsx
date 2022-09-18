@@ -4,6 +4,8 @@ import Popup from './components/popup/Popup';
 import AppRoutes from './routes/AppRoutes';
 import Footer from './layout/footer/Footer';
 
+export const BASE_URL = process.env.REACT_APP_BASE_URL
+
 type Props = {
 }
 

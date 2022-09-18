@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import Slider from '../../components/slider/Slider'
 import AnnouncementBar from '../../sections/announcement-bar/AnnouncementBar'
+import BackgroundImageText from '../../sections/background-image-text/BackgroundImageText'
+import FromTheJournal from '../../sections/from-the-journal/FromTheJournal'
+import LocalPickup from '../../sections/local-pickup/LocalPickup'
+import PopularPicks from '../../sections/popular-picks/PopularPicks'
 import PromoDiscount from '../../sections/promo/promo-discount/PromoDiscount'
 import PromoDouble from '../../sections/promo/promo-double/PromoDouble'
 import PromoSingle from '../../sections/promo/promo-single/PromoSingle'
@@ -40,6 +44,10 @@ export class Home extends Component<Props, State> {
                 <ShopByCategory />
                 <PromoSingle />
                 <PromoDiscount />
+                {/* <PopularPicks /> */}
+                <BackgroundImageText /> 
+                <FromTheJournal />
+                <LocalPickup />
             </div>
         )
     }

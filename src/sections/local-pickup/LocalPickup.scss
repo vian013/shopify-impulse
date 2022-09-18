@@ -1,0 +1,16 @@
+.local-pickup {
+    position: relative;
+
+    .description {
+        p {
+            &:first-of-type {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .shop-btn {
+        font-size: 13px;
+        padding: 10px 14px;
+    }
+}
