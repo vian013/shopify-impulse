@@ -1,0 +1,52 @@
+@use "../../../styles/" as *;
+
+.newsletter-wrapper {
+    width: 27%;
+
+    .title {
+        font-size: 15px;
+        line-height: 20px;
+        margin-bottom: 20px;
+    }
+
+    .email-wrapper {
+        width: 90%;
+        border-bottom: 2px solid $border-color--3;
+        position: relative;
+        margin-bottom: 30px;
+        
+        input {
+            width: 100%;
+            border: none;
+            font-size: 15px;
+            font-family: $primary-font;
+            padding: 15px 0;
+            background: rgb(231, 230, 230);
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            right: 5px;
+            transform: translateY(-40%);
+            cursor: pointer;
+            border: none;
+
+            .icon-email {
+                width: 25px;
+
+                path {
+                    stroke: $border-color--2;
+                    fill: $bg-color--1;
+                }
+            }
+        }
+    }
+    
+    .social-icons {
+        .social-icon {
+            width: 25px;
+            margin-right: 15px;
+        }
+    } 
+}

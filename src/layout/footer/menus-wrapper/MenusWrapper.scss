@@ -1,0 +1,13 @@
+.menus-wrapper {
+    width: 60%;
+    display: flex;
+
+    .menu-wrapper {
+        width: calc(100%/3);
+
+        li {
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+    }
+}

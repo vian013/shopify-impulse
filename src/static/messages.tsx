@@ -24,6 +24,12 @@ export default {
         localPickup: {
             title: "Local pickup available",
             btnText: "Get directions"
+        },
+        footer: {
+            newsletter: {
+                title: "Be the first to know about our biggest and best sales. We'll never send more than one email a month.",
+                placeholder: "Enter your email"
+            }
         }
     }
 }
