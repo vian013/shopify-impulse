@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { BASE_URL } from '../../App'
+import ViewAllButton from '../../components/view-all-btn/ViewAllButton'
 import messages from '../../static/messages'
+import "./PopularPicks.scss"
 
 type Props = {}
 
@@ -41,18 +43,21 @@ export class PopularPicks extends Component<Props, State> {
     }
     
   render() {
+    const {title} = messages.sections.popularPicks
     const {handle, products} = this.state
     
     return (
       <div className='popular-picks section'>
-        <div className="title">{messages.sections.popularPicks.title}</div>
-        <Link to={`/collections/${handle}`}></Link>
+        <div className="page-width">
+          <div className="title">{title}</div>
+          <ViewAllButton link='/products'/>
 
-        {products.length === 0 ? 
+          {products.length === 0 ? 
             <h1>Loading...</h1> :
             <div className="products-wrapper">
-                {products.map(({featuredImage, title, price}, index)=>(
+                {products.map(({featuredImage, title, price, handle}, index)=>(
                     <div className="product-wrapper" key={index}>
+                      <Link to={`/products/${handle}`}>
                         <div className="img-wrapper">
                           <img src={featuredImage} alt={handle} />
                         </div>
@@ -60,10 +65,12 @@ export class PopularPicks extends Component<Props, State> {
                           <p className="title">{title}</p>
                           <p className="price">${price}</p>
                         </div>
+                      </Link>
                     </div>
                 ))}
             </div>
-        }
+          }
+        </div>
       </div>
     )
   }

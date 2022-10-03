@@ -1,6 +1,7 @@
+@use "../../styles/" as *;
+
 #footer {
     padding: 65px 0;
-    background: rgb(231, 230, 230);
 
     .content-wrapper {
         display: flex;

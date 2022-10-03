@@ -44,7 +44,7 @@ export class Home extends Component<Props, State> {
                 <ShopByCategory />
                 <PromoSingle />
                 <PromoDiscount />
-                {/* <PopularPicks /> */}
+                <PopularPicks />
                 <BackgroundImageText /> 
                 <FromTheJournal />
                 <LocalPickup />

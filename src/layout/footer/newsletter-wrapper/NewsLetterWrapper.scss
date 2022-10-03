@@ -21,7 +21,6 @@
             font-size: 15px;
             font-family: $primary-font;
             padding: 15px 0;
-            background: rgb(231, 230, 230);
         }
 
         button {
@@ -31,12 +30,13 @@
             transform: translateY(-40%);
             cursor: pointer;
             border: none;
+            background: $bg-color--1;
 
             .icon-email {
                 width: 25px;
 
                 path {
-                    stroke: $border-color--2;
+                    stroke: $border-color--3;
                     fill: $bg-color--1;
                 }
             }

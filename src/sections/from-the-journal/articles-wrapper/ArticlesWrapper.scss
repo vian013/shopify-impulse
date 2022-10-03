@@ -1,0 +1,33 @@
+.articles-wrapper {
+    display: flex;
+    margin: 0 -10px;
+
+    .article-wrapper {
+        flex-grow: 1;
+        flex-basis: 0;
+        margin: 0 10px;
+        
+        .img-wrapper {
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .content-wrapper {
+            text-align: center;
+            margin-top: 20px;
+            
+            .published-at {
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+
+            .title {
+                font-size: 20px;
+                text-transform: capitalize;
+            }
+        }
+    }
+}
