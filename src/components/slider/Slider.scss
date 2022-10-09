@@ -6,23 +6,31 @@
         opacity: 0;
     }
     
-    .swiper-slide-active {
-        .slide-container {
-            .content-wrapper {
-                .title {
-                    transform: translateY(0);
-                }
-    
-                .sub-title {
-                    transform: translateY(0);
-                }
-    
-                .shop-btn {
-                    opacity: 1;
+    .swiper-slide {
+        opacity: 0;
+        transition: opacity .5s ease-in;
+        
+        &.swiper-slide-active {
+            opacity: 1;
+            transition: opacity .5s ease-in;
+
+            .slide-container {
+                .content-wrapper {
+                    .title {
+                        transform: translateY(0);
+                    }
+        
+                    .sub-title {
+                        transform: translateY(0);
+                    }
+        
+                    .shop-btn {
+                        opacity: 1;
+                    }
                 }
             }
         }
-    
+
     }
          
     .autoplay-btn {
