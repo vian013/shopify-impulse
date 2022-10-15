@@ -20,8 +20,8 @@ export class ShopByCategory extends Component<Props, State> {
       <div className='shop-by-category section'>
         <div className="page-width">
           <div className="title">{messages.sections.shopByCategory.title}</div>
+          <CollectionPanel />
         </div>
-        <CollectionPanel />
       </div>
     )
   }

@@ -5,6 +5,7 @@ import BackgroundImageText from '../../sections/background-image-text/Background
 import FromTheJournal from '../../sections/from-the-journal/FromTheJournal'
 import LocalPickup from '../../sections/local-pickup/LocalPickup'
 import PopularPicks from '../../sections/popular-picks/PopularPicks'
+import PopularPicksWithData from '../../sections/popular-picks/PopularPicksWithData'
 import PromoDiscount from '../../sections/promo/promo-discount/PromoDiscount'
 import PromoDouble from '../../sections/promo/promo-double/PromoDouble'
 import PromoSingle from '../../sections/promo/promo-single/PromoSingle'
@@ -44,7 +45,7 @@ export class Home extends Component<Props, State> {
                 <ShopByCategory />
                 <PromoSingle />
                 <PromoDiscount />
-                <PopularPicks />
+                <PopularPicksWithData />
                 <BackgroundImageText /> 
                 <FromTheJournal />
                 <LocalPickup />

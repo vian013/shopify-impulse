@@ -1,50 +1,30 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { BASE_URL } from '../../App'
 import ViewAllButton from '../../components/view-all-btn/ViewAllButton'
+import { CombinedProps } from '../../hoc/withUseQuery'
 import messages from '../../static/messages'
 import "./PopularPicks.scss"
 
 type Props = {}
 
+export type AllProps = CombinedProps<Product[], Props>
+
 type State = {
-    handle: string,
-    products: Product[]
 }
 
-type Product = {
+export type Product = {
     featuredImage: string,
     title: string,
     handle: string,
     price: number,
 }
 
-export class PopularPicks extends Component<Props, State> {
-    constructor(props: Props) {
-      super(props)
-    
-      this.state = {
-        handle: "adidas",
-        products: []
-      }
-    }
-
-    componentDidMount(): void {
-        const fetchProducts = async () => {
-            const res = await fetch(`${BASE_URL}/collections/${this.state.handle}`)
-            const _products = await res.json()
-            this.setState({products: _products.slice(0, 4)})
-        }
-
-        fetchProducts()
-    }
-
-    componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
-    }
+export class PopularPicks extends Component<AllProps, State> {
     
   render() {
     const {title} = messages.sections.popularPicks
-    const {handle, products} = this.state
+    const {data, isLoading} = this.props.queryResult
+    const products = data?.slice(0, 4)
     
     return (
       <div className='popular-picks section'>
@@ -52,10 +32,10 @@ export class PopularPicks extends Component<Props, State> {
           <div className="title">{title}</div>
           <ViewAllButton link='/products'/>
 
-          {products.length === 0 ? 
+          {isLoading ? 
             <h1>Loading...</h1> :
             <div className="products-wrapper">
-                {products.map(({featuredImage, title, price, handle}, index)=>(
+                {products!.map(({featuredImage, title, price, handle}, index)=>(
                     <div className="product-wrapper" key={index}>
                       <Link to={`/products/${handle}`}>
                         <div className="img-wrapper">
@@ -75,5 +55,6 @@ export class PopularPicks extends Component<Props, State> {
     )
   }
 }
+
 
 export default PopularPicks

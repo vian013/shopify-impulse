@@ -13,9 +13,7 @@ export type CombinedProps<ResultType, Props> = {
 } & Props
 
 function withUseQuery<ResultType, Props>({queryId, queryFn, queryOption}: QueryProps) {
-    return function(WrappedComponent: React.ComponentType<{
-        queryResult: UseQueryResult<ResultType, string> & Props
-    }>) {
+    return function(WrappedComponent: React.ComponentType<CombinedProps<ResultType, Props>>) {
         const WithUseQuery = (props: Props) => {
             const queryResult = useWrappedQuery<ResultType>({queryId, queryFn, queryOption})
     
