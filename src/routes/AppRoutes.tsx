@@ -1,6 +1,7 @@
 import React from 'react'
 import {Route, Routes} from "react-router-dom"
 import About from '../pages/about/About'
+import Login from '../pages/account/login/Login'
 import Home from '../pages/home/Home'
 import NotFound from '../pages/not-found/NotFound'
 import Product from '../pages/product/Product'
@@ -14,6 +15,10 @@ function AppRoutes() {
           <Route path='/products'>
             <Route index element={<Products/>}/>
             <Route path=':handle' element={<Product/>}></Route>
+          </Route>
+          <Route path='/account' element={<Login/>}>
+            <Route index element={<Login/>}></Route>
+            <Route path='login' element={<Login/>}></Route>
           </Route>
           <Route path='/about' element={<About/>}></Route>
           <Route path='*' element={<NotFound/>}></Route>

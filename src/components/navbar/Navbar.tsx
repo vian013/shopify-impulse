@@ -24,20 +24,24 @@ function Navbar() {
         <Link className='link-wrapper' to={"/pages/features"}>theme features</Link>
       </nav>
       <div className="account-and-cart">
-        <div className="account-btn btn">
-          <svg aria-hidden="true" focusable="false" role="presentation" className="icon icon-user" viewBox="0 0 64 64">
-            <g>
-              <path d="M35 39.84v-2.53c3.3-1.91 6-6.66 6-11.41 0-7.63 0-13.82-9-13.82s-9 6.19-9 13.82c0 4.75 2.7 9.51 6 11.41v2.53c-10.18.85-18 6-18 12.16h42c0-6.19-7.82-11.31-18-12.16z"></path>
-            </g>
-          </svg>
-        </div>
-        <div className="cart-btn btn">
-          <svg aria-hidden="true" focusable="false" role="presentation" className="icon icon-bag" viewBox="0 0 64 64">
-            <g>
-              <path d="M25 26c0-15.79 3.57-20 8-20s8 4.21 8 20"></path><path d="M14.74 18h36.51l3.59 36.73h-43.7z"></path>
-            </g>
-          </svg>
-        </div>
+          <Link to={"account"}>
+            <div className="account-btn btn">
+                <svg aria-hidden="true" focusable="false" role="presentation" className="icon icon-user" viewBox="0 0 64 64">
+                  <g>
+                    <path d="M35 39.84v-2.53c3.3-1.91 6-6.66 6-11.41 0-7.63 0-13.82-9-13.82s-9 6.19-9 13.82c0 4.75 2.7 9.51 6 11.41v2.53c-10.18.85-18 6-18 12.16h42c0-6.19-7.82-11.31-18-12.16z"></path>
+                  </g>
+                </svg>
+            </div>
+          </Link>
+          <Link to={"/cart"}>
+            <div className="cart-btn btn">
+              <svg aria-hidden="true" focusable="false" role="presentation" className="icon icon-bag" viewBox="0 0 64 64">
+                <g>
+                  <path d="M25 26c0-15.79 3.57-20 8-20s8 4.21 8 20"></path><path d="M14.74 18h36.51l3.59 36.73h-43.7z"></path>
+                </g>
+              </svg>
+            </div>
+          </Link>
       </div>
     </div>
   )

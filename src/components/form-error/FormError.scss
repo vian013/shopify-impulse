@@ -1,0 +1,5 @@
+@use "../../styles/" as *;
+
+.form-error {
+    color: $form-error-color;
+}

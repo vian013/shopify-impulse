@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import TopBar from '../../components/top-bar/TopBar'
+import AnnouncementBar from '../../sections/announcement-bar/AnnouncementBar'
 import styles from "./Header.module.scss"
 import "./Header.scss"
 
@@ -10,6 +11,7 @@ export class Header extends Component {
       <header id="header">
         <TopBar />
         <Navbar />
+        <AnnouncementBar/>
       </header>
     )
   }

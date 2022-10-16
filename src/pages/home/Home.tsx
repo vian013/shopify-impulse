@@ -38,7 +38,6 @@ export class Home extends Component<Props, State> {
     render() {
         return (
             <div id='homepage'>
-                <AnnouncementBar delay={this.state.sliderDelay}/>
                 <Slider delay={this.state.sliderDelay}/>
                 <TextBanner />
                 <PromoDouble />
