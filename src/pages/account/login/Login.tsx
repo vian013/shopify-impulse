@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import "./Login.scss"
 import {object, string} from "yup"
 import FormError from '../../../components/form-error/FormError'
+import { useDispatch } from 'react-redux'
+import {AsyncThunkAction, ThunkDispatch, AnyAction} from "@reduxjs/toolkit"
+import { login, User, UserState } from '../../../redux/features/user/userSlice'
 
 type FormFields = {
   email: string,
@@ -19,12 +22,14 @@ const validationSchema = object({
   password: string().required("Password must not be empty.")
 })
 
-const onSubmit = (values: FormFields, submit: FormikHelpers<FormFields>) => {
-  console.log("submit");
-   
-}
-
 function Login() {
+  const dispatch: ThunkDispatch<UserState, any, AnyAction> = useDispatch()
+  
+  const onSubmit = (values: FormFields, submit: FormikHelpers<FormFields>) => {
+    console.log("submit");
+    dispatch(login(values))
+  }
+  
   return (
     <div id='login-page'>
       <div className="page-width">
