@@ -12,6 +12,7 @@
     display: inline-block;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 
     &.grey {
         background: $btn-bg-color--3;

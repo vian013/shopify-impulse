@@ -1,11 +1,12 @@
-@use "../../styles/" as *;
+import React from 'react'
+import styled from 'styled-components'
 
-.view-all-wrapper {
+const SecondaryButton = styled.div`
     text-align: center;
     --border-color--1: #d9d9d9;
     --bg-color--1: #ffffff;
 
-    .view-all-btn {
+    .btn {
         text-transform: uppercase;
         padding: 9px 12px;
         border: 1px solid var(--border-color--1);
@@ -16,4 +17,6 @@
         cursor: pointer;
         background: var(--bg-color--1);
     }
-}
+` 
+
+export default SecondaryButton
