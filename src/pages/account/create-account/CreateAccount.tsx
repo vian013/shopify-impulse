@@ -4,7 +4,7 @@ import {object, string} from "yup"
 import { ErrorMessage, Field, FormikHelpers } from 'formik'
 import { AnyAction, ThunkDispatch } from '@reduxjs/toolkit'
 import { createUser, UserState } from '../../../redux/features/user/userSlice'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import FormError from '../../../components/form-error/FormError'
 import { LoginFormFields } from '../login/Login'
 import useBackToAccount from '../../../custom-hooks/useBackToAccount'
@@ -30,7 +30,8 @@ const validationSchema = object({
 
 function CreateAccount() {
   const dispatch: ThunkDispatch<UserState, any, AnyAction> = useDispatch()
-  
+  const {error} = useSelector<{user: UserState}>(state => state.user) as UserState
+
   useBackToAccount()
     
   const onSubmit = (values: CreateAccountFormFields, helper: FormikHelpers<CreateAccountFormFields>) => {
@@ -66,6 +67,7 @@ function CreateAccount() {
               <Field type="password" id="password" name="password"/>
               <ErrorMessage name='password' component={FormError as React.ComponentType}/>
             </div>
+            {error&&<p className='error-message'>{error}</p>}
           </>
         </AccountForm>
     </div>

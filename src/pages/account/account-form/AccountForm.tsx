@@ -17,7 +17,7 @@ type Props<FormFields> = {
 }
 
 function AccountForm<T extends FormikValues>({initialValues, onSubmit, validationSchema, children, title, btnText, bottomText, bottomLink}: Props<T>) {
-  const userState = useSelector<UserState>(state => state.user) as UserState
+  const userState = useSelector<{user: UserState}>(state => state.user) as UserState
   const {loading} = userState
     
   return (

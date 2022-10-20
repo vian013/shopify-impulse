@@ -1,5 +1,27 @@
 #account-page {
     .content-wrapper {
         margin-top: 80px;
+        margin-bottom: 325px;
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .order-history, .account-details {
+            p {
+                &:first-child {
+                    margin-bottom: 15px;
+                }
+
+                &:last-child {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .account-details {
+            padding-right: 150px;
+        }
     }
 }

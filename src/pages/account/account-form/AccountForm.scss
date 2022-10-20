@@ -57,5 +57,10 @@
                 display: block;
             }
         }
+
+        .error-message {
+            color: $form-error-color;
+            margin-bottom: 20px;
+        }
     }
 }

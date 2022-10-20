@@ -11,7 +11,7 @@ export type User = {
     lastName: string,
     email: string,
     phone: string,
-    numberOfOrders: number
+    numberOfOrders: string
 }
 
 export type UserState = {
@@ -76,8 +76,13 @@ const createUser = createAsyncThunk<User, CreateAccountFormFields, {rejectValue:
           "Content-Type": "application/json",
         },
         body: JSON.stringify(fields),
+        credentials: "include"
       })
-    if (res.status >= 400) return thunkApi.rejectWithValue("Failed to create user")
+    if (res.status >= 400) {
+        const error: {message: string} = await res.json()
+        
+        return error ? thunkApi.rejectWithValue(error.message) : thunkApi.rejectWithValue("Failed to create")
+    } 
 
     const data: User = await res.json()
     return data
@@ -124,9 +129,10 @@ const userSlice = createSlice({
             state.error = ""
         })
         builder.addCase(createUser.rejected, (state, action) => {
+            console.log('action', action);
             state.loading = false
             state.user = null
-            state.error = action.error.message
+            state.error = action.payload
         })
         builder.addCase(logout.pending, (state) => {
             state.loading = true
@@ -137,6 +143,7 @@ const userSlice = createSlice({
             state.error = ""
         })
         builder.addCase(logout.rejected, (state, action) => {
+            
             state.loading = false
             state.user = null
             state.error = action.error.message
